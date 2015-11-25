@@ -1,6 +1,6 @@
 # webbrowser
 
-Go library for opening URLs using a web browser. Currently supports Linux and OSX.
+Go library for opening URLs using a web browser. Currently supports Linux, OSX, and Windows.
 
 ## Documentation
 

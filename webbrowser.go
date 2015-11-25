@@ -49,9 +49,8 @@ func Open(u string, windowState WindowType, autoRaise bool) error {
 
 func detectBrowsers(o string) (Opener, error) {
 	switch o {
-	// TODO add support for windows
-	//case "windows":
-	//return registerWindows()
+	case "windows":
+		return registerWindows(os.Environ())
 	case "linux":
 		return registerLinux(os.Environ())
 	case "darwin":
@@ -66,4 +65,8 @@ func registerOSX(env []string) (Opener, error) {
 
 func registerLinux(env []string) (Opener, error) {
 	return &LinuxOpener{Env: env}, nil
+}
+
+func registerWindows(env []string) (Opener, error) {
+	return &WindowsOpener{Env: env}, nil
 }

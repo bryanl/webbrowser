@@ -13,7 +13,8 @@ func Test_detectBrowsers(t *testing.T) {
 	}{
 		{o: "linux", t: &LinuxOpener{}, e: nil},
 		{o: "darwin", t: &OSXOpener{}, e: nil},
-		{o: "windows", e: &UnsupportedOSError{}},
+		{o: "windows", t: &WindowsOpener{}, e: nil},
+		{o: "freebsd", e: &UnsupportedOSError{}},
 	}
 
 	for _, c := range cases {
