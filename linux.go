@@ -21,6 +21,6 @@ func (o *LinuxOpener) Open(u string, windowType WindowType, autoRaise bool) erro
 	if getEnv("DISPLAY", o.Env) == "" {
 		return &RequireXError{}
 	}
-	cmd := exec.Command("/usr/bin/xdg-open", u)
+	cmd := exec.Command("xdg-open", u)
 	return cmd.Run()
 }
